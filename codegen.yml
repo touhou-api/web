@@ -1,0 +1,12 @@
+overwrite: true
+schema: ${API_SCHEMA_PATH}
+documents:
+  - "src/queries/*.ts"
+generates:
+  src/codegen/fragment.json:
+    plugins:
+      - fragment-matcher
+  src/codegen/queries.ts:
+    plugins:
+      - typescript
+      - typescript-operations

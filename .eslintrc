@@ -1,0 +1,83 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "eslint-config-airbnb-base",
+    // plugin
+    "plugin:eslint-comments/recommended",
+    "plugin:promise/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    // prettier
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+  "plugins": ["react-hooks"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "class-methods-use-this": 0,
+    "no-useless-constructor": 0,
+    // typescript
+    "@typescript-eslint/interface-name-prefix": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-explicit-any": 0,
+    // import
+    "import/no-cycle": 1,
+    "import/prefer-default-export": 0,
+    "import/order": [
+      2,
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/first": 2,
+    "import/extensions": [
+      2,
+      {
+        "json": "always",
+        "ts": "never"
+      }
+    ],
+    // react
+    "react/self-closing-comp": [2]
+  },
+  "overrides": [
+    {
+      "files": ["*.d.ts"],
+      "rules": {
+        "spaced-comment": [2, "always", { "markers": ["/ <reference"] }]
+      }
+    },
+    {
+      "files": ["*.spec.ts", "*.e2e-spec.ts"],
+      "rules": { "import/no-extraneous-dependencies": 0 }
+    },
+    {
+      "files": ["*.tsx"],
+      "rules": {
+        "react/prop-types": 0
+      }
+    },
+    {
+      "files": ["next.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": 0
+      }
+    }
+  ]
+}
