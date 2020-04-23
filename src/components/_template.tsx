@@ -5,20 +5,16 @@ import styled from "styled-components";
 
 export type Props = {} & ContainerProps;
 export const Component: React.FC<Props> = ({ className }) => (
-  <nav className={classnames(className, "overflow-y-scroll")}>
-    <div className={classnames("py-8", "px-4")}>
-      <p>Touhou API</p>
-    </div>
-  </nav>
+  <div className={classnames(className)} />
 );
 export const StyledComponent: typeof Component = styled(Component)``;
 
 export type ContainerProps = {
   className?: string;
 };
-export const NavMenu: React.FC<ContainerProps> = (props) => {
+export const Template: React.FC<ContainerProps> = (props) => {
   const { t } = useTranslation();
   return <StyledComponent {...props} />;
 };
 
-export default NavMenu;
+export default Template;
