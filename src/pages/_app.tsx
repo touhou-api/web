@@ -39,7 +39,7 @@ export const AppComponent: React.FC<Props> = ({
           "xl:w-1/5"
         )}
       >
-        <NavMenu className={classnames("min-h-full")} />
+        <NavMenu className={classnames("min-h-full", "h-full")} />
       </div>
       <div className={classnames("w-3/4", "xl:w-4/5", "pt-24", "px-12")}>
         <Component {...pageProps} />
